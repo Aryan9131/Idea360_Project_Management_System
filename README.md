@@ -69,7 +69,6 @@ This project is deployed on **Vercel/Render**. You can view the live demo at:
 frontend/
 ├── src/
 │   ├── components/    # Reusable UI components
-│   ├── pages/         # Application pages
 │   ├── redux/         # State management (Redux)
 │   ├── services/      # API calls & authentication logic
 │   ├── utils/         # Helper functions
@@ -78,6 +77,17 @@ frontend/
 │   ├── index.css      # Global styles
 │
 ├── public/            # Static assets
+├── .env               # Environment variables
+├── package.json       # Dependencies & scripts
+
+backend/
+├── config/
+│   ├── mongoose.js/    # for database connection
+│   ├── passport-jwt-strategy.js/   # for authentication
+├── controllers/       # for actions
+├── models/            # for Schemas
+├── routes/            # for handling routes
+├── index.js/          # main index.js file for initializing server, handling middlewares, routes 
 ├── .env               # Environment variables
 ├── package.json       # Dependencies & scripts
 ├── README.md          # Project documentation
