@@ -23,6 +23,10 @@ This is a Full stack project that displays a list of projects and tasks and func
 - **NodeJs** (for handling server side logic)
 - **Mongodb** (As database)
 
+## Output :
+
+ ![Screenshot (152)](https://github.com/user-attachments/assets/9c826e74-993e-4595-888e-9b533b80b792)
+
 ## Installation & Setup
 
 1. Clone the repository:
