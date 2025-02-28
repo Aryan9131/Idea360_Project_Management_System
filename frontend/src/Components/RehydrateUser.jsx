@@ -17,7 +17,6 @@ const Rehydrate = ({ children }) => {
             setLoading(false);
             return; // Skip fetching user
         }
-  
 
         const fetchUser = async () => {
             try {

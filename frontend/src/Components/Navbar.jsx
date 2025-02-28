@@ -18,6 +18,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import LeftSwipeableDrawer from './Drawer';
 import { setSearchQuery } from '../redux/slices/userSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import { Button } from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -63,7 +64,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export const Navbar = () => {
   const dispatch = useDispatch()
-  const {searchQuery } = useSelector((state) => state.user)
+  const {searchQuery } = useSelector((state) => state.user);
+  const {user} = useSelector((state) => state.user)
     const navigate=useNavigate()
     const handleLogout=()=>{
         localStorage.removeItem('token');
@@ -110,8 +112,9 @@ export const Navbar = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      
+        <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+        <MenuItem onClick={handleLogout}>Logout</MenuItem> 
     </Menu>
   );
 
