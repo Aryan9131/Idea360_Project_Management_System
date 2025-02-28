@@ -7,6 +7,7 @@ This is a Full stack project that displays a list of projects and tasks and func
 - **Project Listing:** Display projects in a card-based layout.
 - **Search Functionality:** Quickly find projects using a search bar.
 - **Manage Tasks & Projects:** Create, edit, and delete tasks and projects.
+- **Project/Taks Detailing Page:** Separate page for checking details of Project and Task on click.
 - **User Authentication:** Implemented using **Passport JWT**.
 - **Notifications:** Uses **react-toastify** for notifications and alerts.
 - **Priority-wise Filtering:** Filter projects based on their priority.
