@@ -8,5 +8,6 @@ router.post('/create-task',passport.authenticate('jwt', {session:false}),TaskCon
 router.post('/update-task/:id',passport.authenticate('jwt', {session:false}),TaskController.update)
 router.delete('/delete-task/:id',passport.authenticate('jwt', {session:false}),TaskController.delete)
 router.get('/get-tasks',passport.authenticate('jwt', {session:false}),TaskController.getAllTasks)
+router.get('/get-task/:id',passport.authenticate('jwt', {session:false}),TaskController.getTask)
 
 module.exports=router

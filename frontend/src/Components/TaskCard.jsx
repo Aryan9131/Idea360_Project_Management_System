@@ -29,7 +29,7 @@ export const TaskCard = ({ data }) => {
       </Box>
       <Box sx={{ display:'flex',justifyContent:'space-between', alignItems:'center'}}>
          <Typography sx={{display:'flex', alignItems:'center', fontSize:'14px'}}><CalendarMonthIcon sx={{height:'15px', color:'blue'}}/>Deadline - 02/03/25</Typography>
-         <Button size="small" variant='outlined' sx={{color:'purple', borderColor:'purple', fontSize:'12px', textTransform:'capitalize'}} >open</Button>
+         <Button size="small" variant='outlined' sx={{color:'purple', borderColor:'purple', fontSize:'12px', textTransform:'capitalize'}} onClick={()=>{navigate(`/task/details/${data._id}`)}} >open</Button>
       </Box>
       <Box sx={{ mt: 1.3  ,display:'flex', alignItems:'center', justifyContent:'flex-start'}}>
          <GroupAvatars/>

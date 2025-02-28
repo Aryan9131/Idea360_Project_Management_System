@@ -9,6 +9,7 @@ import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import GroupAvatars from './AvatarGroups';
 import { MenuButtons } from './MenuButtons';
+import { useNavigate } from 'react-router-dom';
 
 const bull = (
   <Box
@@ -20,6 +21,7 @@ const bull = (
 );
 
 export default function ProjectCard({project}) {
+  const navigate = useNavigate()
   return (
     <Card sx={{ width: 300, margin:'5px' }}>
       <CardContent>
@@ -30,7 +32,7 @@ export default function ProjectCard({project}) {
         <Typography sx={{ color: 'text.secondary', mb: 1.3 , fontSize:'13px'}}>{project?.title}</Typography>
         <Box sx={{ display:'flex',justifyContent:'space-between', alignItems:'center'}}>
            <Typography sx={{display:'flex', alignItems:'center', fontSize:'14px'}}><CalendarMonthIcon sx={{height:'15px', color:'blue'}}/>Deadline - 02/03/25</Typography>
-           <Button size="small" variant='outlined' sx={{color:'purple', borderColor:'purple', fontSize:'12px', textTransform:'capitalize'}} >open</Button>
+           <Button size="small" variant='outlined' sx={{color:'purple', borderColor:'purple', fontSize:'12px', textTransform:'capitalize'}} onClick={()=>{navigate(`/project/details/${project._id}`)}} >open</Button>
         </Box>
         <Box sx={{ mt: 1.3  ,display:'flex', alignItems:'center', justifyContent:'flex-start'}}>
            <GroupAvatars/>

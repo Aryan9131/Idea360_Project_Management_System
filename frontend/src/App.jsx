@@ -6,6 +6,7 @@ import Layout from './Components/Layout';
 import { HomePage } from './Components/HomePage';
 import { AllTasks } from './Components/AllTasks';
 import { TaskDetail } from './Components/TaskDetail';
+import { ProjectDetail } from './Components/ProjectDetails';
 
 function App() {
     const [token, setToken] = useState(localStorage.getItem('token'));
@@ -20,7 +21,8 @@ function App() {
             <Route path="/" element={token ? <Layout /> : <Navigate to="/sign-in" />}>
                 <Route index element={<HomePage />} />
                 <Route path="/all-tasks" element={<AllTasks />} />
-                <Route path="/task-detail/:id" element={<TaskDetail />} />
+                <Route path="/task/details/:id" element={<TaskDetail />} />
+                <Route path="/project/details/:id" element={<ProjectDetail />} />
             </Route>
         </Routes>
     );

@@ -22,7 +22,6 @@ module.exports.update = async function (req, res) {
    })
 }
 module.exports.delete = async function (req, res) {
-
    await Task.deleteOne({ _id: req.params.id });
    const user = await User.findById(req.user._id);
    user.tasks = user.tasks.filter((taskId) => taskId.toString() != req.params.id.toString());
@@ -45,6 +44,22 @@ module.exports.getAllTasks = async function (req, res) {
       return res.status(500).json({
          message: 'Eror !',
          tasks: []
+      })
+   }
+}
+module.exports.getTask = async function (req, res) {
+   try {
+      const task = await Task.findOne({ _id: req.params.id });
+      console.log('get task _> '+task)
+      return res.status(200).json({
+         message: 'done !',
+         task: task
+      })
+   } catch (error) {
+      console.log('Error while fetching task : '+error);
+      return res.status(500).json({
+         message: 'Eror !',
+         task: undefined
       })
    }
 }

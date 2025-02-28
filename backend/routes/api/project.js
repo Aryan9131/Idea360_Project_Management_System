@@ -8,5 +8,6 @@ router.post('/create-project',passport.authenticate('jwt', {session:false}),Proj
 router.post('/update-project/:id',passport.authenticate('jwt', {session:false}),ProjectController.update)
 router.delete('/delete-project/:id',passport.authenticate('jwt', {session:false}),ProjectController.delete)
 router.get('/get-projects',passport.authenticate('jwt', {session:false}),ProjectController.getAllProjects)
+router.get('/get-project/:id',passport.authenticate('jwt', {session:false}),ProjectController.getProject)
 
 module.exports=router
