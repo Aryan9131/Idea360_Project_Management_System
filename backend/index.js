@@ -12,18 +12,25 @@ connectToMongoDB();
 // Enable CORS for your frontend (React app) running on port 5417
 const corsOptions = {
     origin: [
-        'https://idea360-project-management-system.onrender.com', // Production frontend URL
-        'http://localhost:5173' // Development frontend URL (adjust the port if necessary)
-    ],// Frontend origin
-    methods: ['GET','POST','PUT','DELETE'],
+        'https://idea360-project-management-system.onrender.com', // Frontend (Production)
+        'http://localhost:5173' // Frontend (Development)
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ["Authorization", "Content-Type"],
     credentials: true
 };
-
 app.use(cors(corsOptions));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(passport.initialize());
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", req.headers.origin); // Dynamic origin
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.header("Access-Control-Allow-Headers", "Authorization, Content-Type");
+    res.header("Access-Control-Allow-Credentials", "true");
+    next();
+});
 
 app.use('/',require('./routes'))
 
