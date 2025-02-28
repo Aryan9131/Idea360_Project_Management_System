@@ -12,7 +12,7 @@ connectToMongoDB();
 // Enable CORS for your frontend (React app) running on port 5417
 const corsOptions = {
     origin: [
-        'https://task-management-system-knam.onrender.com', // Production frontend URL
+        'https://idea360-project-management-system.onrender.com', // Production frontend URL
         'http://localhost:5173' // Development frontend URL (adjust the port if necessary)
     ],// Frontend origin
     methods: ['GET','POST','PUT','DELETE'],

@@ -15,7 +15,7 @@ export function AllTasks({ project }) {
   useEffect(() => {
     try {
       const fetchTasks = async () => {
-        const fetchedTaskResponse =  await fetch('http://localhost:8000/api/task/get-tasks', {
+        const fetchedTaskResponse =  await fetch('https://idea360-project-management-system.vercel.app/api/task/get-tasks', {
           method: "GET",
           headers: {
             'content-type': 'application/json',

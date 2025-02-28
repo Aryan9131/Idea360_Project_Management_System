@@ -17,7 +17,7 @@ export const HomePage = () => {
   useEffect(() => {
     try {
       const fetchProjects = async () => {
-        const fetchedProjectResponse =  await fetch('http://localhost:8000/api/project/get-projects', {
+        const fetchedProjectResponse =  await fetch('https://idea360-project-management-system.vercel.app/api/project/get-projects', {
           method: "GET",
           headers: {
             'content-type': 'application/json',

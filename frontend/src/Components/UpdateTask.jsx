@@ -46,7 +46,7 @@ export function UpdateTaskDialog({prevtask}) {
             status:status,
             priority:priority
         }
-        const updatedTaskResponse = await fetch(`https://task-management-system-backend-98ub.onrender.com/api/task/update-task/${prevtask._id}`, {
+        const updatedTaskResponse = await fetch(`https://idea360-project-management-system.vercel.app/api/task/update-task/${prevtask._id}`, {
             method: 'POST', // Method should be part of the options object
             headers: {
                 'Content-Type': 'application/json', // Header keys should be quoted, not the object itself
