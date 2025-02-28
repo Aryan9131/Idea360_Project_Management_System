@@ -15,7 +15,7 @@ export const SignUp = () => {
       email :email, 
       password :password
      }
-     const createdUserResponse=await fetch(`${import.meta.env.BACKEND_URL}/api/user/create-user`,{
+     const createdUserResponse=await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/create-user`,{
        method:"POST",
        headers:{
           'content-type':'application/json'

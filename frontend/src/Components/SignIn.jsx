@@ -16,7 +16,7 @@ export const SignIn = ({setToken}) => {
         email: email,
         password: password
       }
-      const signInUserResponse = await fetch(`${import.meta.env.BACKEND_URL}/api/user/create-session`, {
+      const signInUserResponse = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/create-session`, {
         method: "POST",
         headers: {
           'content-type': 'application/json'

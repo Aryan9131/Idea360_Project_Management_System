@@ -22,7 +22,7 @@ const Rehydrate = ({ children }) => {
 
         const fetchUser = async () => {
             try {
-                const fetchedUserResponse = await fetch(`${import.meta.env.BACKEND_URL}/api/user/get-user`, {
+                const fetchedUserResponse = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/get-user`, {
                     method: "GET",
                     headers: {
                         'content-type': 'application/json',

@@ -17,7 +17,7 @@ export const HomePage = () => {
   useEffect(() => {
     try {
       const fetchProjects = async () => {
-        const fetchedProjectResponse =  await fetch(`${import.meta.env.BACKEND_URL}/api/project/get-projects`, {
+        const fetchedProjectResponse =  await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/project/get-projects`, {
           method: "GET",
           headers: {
             'content-type': 'application/json',
