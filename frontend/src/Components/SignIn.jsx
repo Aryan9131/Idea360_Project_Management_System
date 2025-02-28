@@ -3,13 +3,15 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 
-export const SignIn = ({setToken}) => {
-   
+export const SignIn = ({ setToken }) => {
+
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const handleSignIn = async () => {
     try {
       const sgnInObj = {
@@ -35,19 +37,24 @@ export const SignIn = ({setToken}) => {
       });
       navigate('/')
     } catch (error) {
-        console.log("Error while signing-In user "+error);
-        toast.error("Sign In Failed !", {
-          style: {
-            backgroundColor: 'red',   // Custom background color for error
-            color: 'white',           // White text color
-          }
-        });
-        navigate('/sign-in')
+      console.log("Error while signing-In user " + error);
+      toast.error("Sign In Failed !", {
+        style: {
+          backgroundColor: 'red',   // Custom background color for error
+          color: 'white',           // White text color
+        }
+      });
+      navigate('/sign-in')
     }
   }
   return (
-    <Box sx={{ width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <Box sx={{ width: '100vw', height: '100vh', display: 'flex',flexDirection:'column', justifyContent: 'center', alignItems: 'center' }}>
       <ToastContainer />
+      <Stack sx={{ width: {xs:'100%', md:'60%'}, mb: 1 }}>
+        <Alert variant="filled" severity="info">
+          Use <strong>guest@gmail.com</strong> / <strong>123</strong> to explore the project, or sign up for a new account.
+        </Alert>
+      </Stack>
       <Box sx={{
         width: { xs: '100%', sm: '90%', md: '350px' },
         height: { xs: '100vh', sm: '90vh', md: '400px' },
@@ -59,16 +66,16 @@ export const SignIn = ({setToken}) => {
         <TextField
           variant='filled'
           label="Email"
-           value={email}
-          onChange={(e)=>setEmail(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           sx={{ width: '80%', margin: '20px 0px' }}
         />
         <TextField
           variant='filled'
           type='password'
           label="Password"
-           value={password}
-          onChange={(e)=>setPassword(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           sx={{ width: '80%' }}
         />
         <Box sx={{ marginTop: '20px', width: '100%', display: 'flex', justifyContent: 'space-around' }}>

@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 
 
 module.exports.getUser=async function(req, res){
-    console.log("get user Request"+req.user);
     const user=await User.findById(req.user._id);
 
     return res.status(200).json({
@@ -12,7 +11,6 @@ module.exports.getUser=async function(req, res){
     })
 }
 module.exports.createUser = async function (req, res) {
-    console.log("got data for creating user : "+JSON.stringify(req.body));
     const newUser = new User(req.body);
     newUser.save();
     return res.status(200).json({

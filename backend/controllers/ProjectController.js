@@ -8,7 +8,6 @@ module.exports.create= async function(req, res){
    const user=await User.findById(req.user._id);
    user.projects.push(createdProject._id);
    await user.save();
-   console.log(" createdProject ->"+createdProject);
    return res.status(200).json({
       message:'created Project !',
       newProject:createdProject
@@ -16,17 +15,14 @@ module.exports.create= async function(req, res){
 }
 
 module.exports.update=async function(req, res){
-   console.log('data get in update --> '+JSON.stringify(req.body));
    const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, { new: true });
    await updatedProject.save();
-   console.log('updatedProject -->'+updatedProject)
    return res.status(200).json({
       message:'done !',
       updatedProject :updatedProject
    })
 }
 module.exports.delete=async function(req, res){
-   console.log('data get in delete --> '+JSON.stringify(req.params));
 
    await Project.deleteOne({_id:req.params.id});
    const user=await User.findById(req.user._id);
@@ -39,7 +35,6 @@ module.exports.delete=async function(req, res){
 
 module.exports.getAllProjects = async function (req, res) {
    try {
-      console.log('data get in getAllTasks --> ' + JSON.stringify(req.user));
       const projects = await Project.find({ user: req.user._id });
       return res.status(200).json({
          message: 'done !',

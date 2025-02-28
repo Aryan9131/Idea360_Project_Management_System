@@ -23,7 +23,6 @@ export function AllTasks({ project }) {
           },
         })
         const fetchedTaskData = await fetchedTaskResponse.json();
-        console.log('**** tasks ----> '+JSON.stringify(fetchedTaskData.tasks))
         if (fetchedTaskData.tasks) {
           dispatch(setTasks({ allTasks: fetchedTaskData.tasks }))
           setFilteredTasks(fetchedTaskData.tasks)

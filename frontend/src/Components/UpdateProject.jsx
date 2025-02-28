@@ -15,11 +15,9 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 export function UpdateProjectDialog({prevproject}) {
-    console.log("prevProject get --> "+JSON.stringify(prevproject))
     const formatDeadline = (isoDate) => {
         if (!isoDate) return ""; // Return empty string if no date is provided
         const date = new Date(isoDate);
-        console.log("Formatted date: ", date); // Debugging: check the parsed date
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, "0"); // Ensure 2-digit month
         const day = String(date.getDate()).padStart(2, "0"); // Ensure 2-digit day

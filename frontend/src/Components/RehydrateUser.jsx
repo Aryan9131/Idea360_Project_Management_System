@@ -18,7 +18,6 @@ const Rehydrate = ({ children }) => {
             return; // Skip fetching user
         }
   
-        console.log('Rehydrate user running .... '+excludedPaths.includes(location.pathname));
 
         const fetchUser = async () => {
             try {
@@ -31,7 +30,6 @@ const Rehydrate = ({ children }) => {
                 });
 
                 const fetchedUserData = await fetchedUserResponse.json();
-                console.log('user in rehydrate --> ' + JSON.stringify(fetchedUserData));
 
                 if (fetchedUserData.user) {
                     localStorage.setItem('userId', fetchedUserData.user._id);

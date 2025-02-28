@@ -42,7 +42,6 @@ export function AddTaskDialog() {
             body: JSON.stringify(obj), // The body should be part of the options object
         });
         const createdTaskData=await createdTaskResponse.json();
-        console.log('newtask come from backend --> '+JSON.stringify(createdTaskData))
         dispatch(addTask({task:createdTaskData.newTask}))
         toast.success("Task Created !", {
             style: {

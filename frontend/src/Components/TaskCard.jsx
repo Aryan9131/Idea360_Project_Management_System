@@ -14,7 +14,6 @@ import { useNavigate } from 'react-router-dom';
 export const TaskCard = ({ data }) => {
   const navigate = useNavigate();
   const handleNavigate = (dataId) => {
-    console.log("CardClicked")
     navigate(`/task-detail/${dataId}`)
   }
   const formatDeadline = (isoDate) => {

@@ -18,10 +18,11 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { useNavigate } from 'react-router-dom';
 
 export default function LeftSwipeableDrawer() {
   const [open, setOpen] = React.useState(false);
-
+  const navigate=useNavigate();
   const toggleDrawer = (open) => (event) => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -37,11 +38,11 @@ export default function LeftSwipeableDrawer() {
       onKeyDown={toggleDrawer(false)}
     >
        <List >
-          <ListItem sx={{fontSize:'13px',borderRadius:'12px', backgroundColor:'skyblue', color:'rgb(26, 95, 244)', fontWeight:'600'}}><GridViewIcon sx={{height:'16px'}}/> Project List</ListItem>
-          <ListItem sx={{fontSize:'13px',borderRadius:'12px', color:'rgb(38, 38, 38)', fontWeight:'600'}}><PeopleAltIcon sx={{height:'16px'}}/> Teams</ListItem>
-          <ListItem sx={{fontSize:'13px',borderRadius:'12px', color:'rgb(38, 38, 38)', fontWeight:'600'}}><TaskAltIcon sx={{height:'16px'}}/> Tasks</ListItem>
-          <ListItem sx={{fontSize:'13px',borderRadius:'12px', color:'rgb(38, 38, 38)', fontWeight:'600'}}><SettingsIcon sx={{height:'16px'}}/> Setting</ListItem>
-          <ListItem sx={{fontSize:'13px',borderRadius:'12px', color:'rgb(38, 38, 38)', fontWeight:'600'}}><TextSnippetIcon sx={{height:'16px'}}/> Report</ListItem>
+          <ListItem sx={{fontSize:'13px',borderRadius:'12px', backgroundColor:'skyblue', color:'rgb(26, 95, 244)', fontWeight:'600', cursor:'pointer'}} onClick={()=>navigate('/')}><GridViewIcon sx={{height:'16px'}}/> Project List</ListItem>
+          <ListItem sx={{fontSize:'13px',borderRadius:'12px', color:'rgb(38, 38, 38)', fontWeight:'600', cursor:'pointer'}} onClick={()=>navigate('/all-tasks')}><PeopleAltIcon sx={{height:'16px'}}/> Teams</ListItem>
+          <ListItem sx={{fontSize:'13px',borderRadius:'12px', color:'rgb(38, 38, 38)', fontWeight:'600', cursor:'pointer'}}><TaskAltIcon sx={{height:'16px'}}/> Tasks</ListItem>
+          <ListItem sx={{fontSize:'13px',borderRadius:'12px', color:'rgb(38, 38, 38)', fontWeight:'600', cursor:'pointer'}}><SettingsIcon sx={{height:'16px'}}/> Setting</ListItem>
+          <ListItem sx={{fontSize:'13px',borderRadius:'12px', color:'rgb(38, 38, 38)', fontWeight:'600', cursor:'pointer'}}><TextSnippetIcon sx={{height:'16px'}}/> Report</ListItem>
        </List>
       <Divider />
       <List >

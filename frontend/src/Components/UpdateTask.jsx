@@ -15,7 +15,6 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 export function UpdateTaskDialog({prevtask}) {
-    console.log("prevTask get --> "+JSON.stringify(prevtask))
     const formatDeadline = (isoDate) => {
         if (!isoDate) return ""; // Return empty string if no date is provided
         const date = new Date(isoDate);

@@ -11,11 +11,11 @@ export const HomePageHeader = ({priority, setPriorityFilter}) => {
     const isLightMode=true
     return (
         <Box sx={{ height: '40px', backgroundColor: 'whitesmoke', width: '100%', padding: '10px 0px', display: 'flex', alignItems: 'center' }}>
-            <Typography sx={{ fontWeight: '600', fontSize: '17px' , marginLeft:'10px'}} >Project List : </Typography>
-            <Box sx={{ flexGrow: 1 }}>
+            <Typography sx={{ display:{xs:'none', sm:'flex'}, fontWeight: '600', fontSize: '17px' , marginLeft:'10px'}} >Project List : </Typography>
+            <Box sx={{ display:{xs:'none', sm:'flex'}, flexGrow: 1 }}>
 
             </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'space-around', width: '50%' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-around', width: {xs:'90%', sm:'60%', md:'50%'} }}>
                 {
                     lastSegment=='all-tasks'
                     ?
