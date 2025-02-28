@@ -48,7 +48,7 @@ export function UpdateProjectDialog({prevproject}) {
             status:status,
             priority:priority
         }
-        const updatedProjectResponse = await fetch(`https://idea360-project-management-system.vercel.app/api/project/update-project/${prevproject._id}`, {
+        const updatedProjectResponse = await fetch(`${import.meta.env.BACKEND_URL}/api/project/update-project/${prevproject._id}`, {
             method: 'POST', // Method should be part of the options object
             headers: {
                 'Content-Type': 'application/json', // Header keys should be quoted, not the object itself

@@ -33,7 +33,7 @@ export function AddTaskDialog() {
             status:status,
             priority:priority
         }
-        const createdTaskResponse = await fetch('https://idea360-project-management-system.vercel.app/api/task/create-task', {
+        const createdTaskResponse = await fetch(`${import.meta.env.BACKEND_URL}/api/task/create-task`, {
             method: 'POST', // Method should be part of the options object
             headers: {
                 'Content-Type': 'application/json', // Header keys should be quoted, not the object itself

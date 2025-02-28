@@ -15,8 +15,8 @@ import { deleteProject } from '../redux/slices/projectSlice';
 export function ConfirmationDialog({currentTask, taskType }) {
   const [open, setOpen] = React.useState(false);
   const [token, setToken]=useState(localStorage.getItem('token'))
-  const [deleteTaskUrl, setDeleteTaskUrl] = useState('https://idea360-project-management-system.vercel.app/api/task/delete-task')
-  const [deleteProjectUrl, setDeleteProjectUrl] = useState('https://idea360-project-management-system.vercel.app/api/task/delete-project')
+  const [deleteTaskUrl, setDeleteTaskUrl] = useState(`${import.meta.env.BACKEND_URL}/api/task/delete-task`)
+  const [deleteProjectUrl, setDeleteProjectUrl] = useState(`${import.meta.env.BACKEND_URL}/api/task/delete-project`)
 
   const dispatch=useDispatch(); 
   const handleClickOpen = () => {

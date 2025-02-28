@@ -36,7 +36,7 @@ export function AddProjectDialog() {
             status:status,
             priority:priority,
         }
-        const createdProjectResponse = await fetch('https://idea360-project-management-system.vercel.app/api/project/create-project', {
+        const createdProjectResponse = await fetch(`${import.meta.env.BACKEND_URL}/api/project/create-project`, {
             method: 'POST', // Method should be part of the options object
             headers: {
                 'Content-Type': 'application/json', // Header keys should be quoted, not the object itself
